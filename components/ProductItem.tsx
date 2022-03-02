@@ -4,6 +4,7 @@ export type Product = {
   id: number;
   price: number;
   title: string;
+  priceFormatted: string;
 };
 
 type ProductItemProps = {
@@ -14,7 +15,7 @@ type ProductItemProps = {
 function ProductItemComponent({ product, onAddWishlist }: ProductItemProps) {
   return (
     <div>
-      {product.title} - <strong>{product.price}</strong>
+      {product.title} - <strong>{product.priceFormatted}</strong>
       <button onClick={() => onAddWishlist(product.id)}>Add to wishlist</button>
     </div>
   );
